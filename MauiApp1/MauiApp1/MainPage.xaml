@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+             x:Class="MauiApp1.MainPage">
+
+    <Grid>
+        
+        <Image Source="pic4.jpg" Aspect="AspectFill" />
+
+
+        <Grid Margin="24">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Header Label -->
+            <Label Text="Here you can add any country you want"
+                   VerticalTextAlignment="Center"
+                   TextColor="Yellow"
+                   FontSize="18"
+                   HorizontalOptions="Center" />
+
+            <!-- Input form for adding a new country -->
+            <Grid Grid.Row="1" BackgroundColor="#70B0B0B0" WidthRequest="500" >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0"
+                       
+                       TextColor="Black"
+                       VerticalOptions="Center" />
+                <Entry Grid.Row="0"
+                       x:Name="countryNameEntry"
+                       Placeholder="Enter the country name"
+                       PlaceholderColor="white"/>
+
+                <Label Grid.Row="1"
+                       
+                       TextColor="Black"
+                       VerticalOptions="Center" />
+                <Entry Grid.Row="1"
+                       x:Name="zipCodeEntry"
+                       Placeholder="Enter the zip code"
+                       PlaceholderColor="white"
+                       Keyboard="Numeric" />
+
+                <Label Grid.Row="2"
+                       
+                       TextColor="Black"
+                       VerticalOptions="Center" />
+                <Entry Grid.Row="2"
+                       x:Name="continentEntry"
+                       
+                       Placeholder="Enter the continent" TextColor="White" 
+                       PlaceholderColor="FloralWhite"/>
+
+                <Button Grid.Row="3"
+                        Text="Add Country"
+                        Clicked="AddCountryButton_Clicked"
+                        BackgroundColor="Green"
+                        TextColor="White"
+                        CornerRadius="5"
+                        Margin="0,10,0,0" />
+                 
+            </Grid>
+
+            <!-- List of countries -->
+            <ListView BackgroundColor="#80B0B0B0" WidthRequest="500" x:Name="lstCountry"
+                      Grid.Row="2"
+                      ItemsSource="{Binding countriesList}"
+                      Margin="0,30,0,0">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <Image Source="{Binding Image}" HeightRequest="40" WidthRequest="40" Margin="0,0,12,0" />
+
+                                <StackLayout Orientation="Vertical">
+                                    <Label Text="{Binding name}"
+                                           FontSize="18"
+                                           TextColor="#FFD700" />
+                                    <Label Text="{Binding zipCode}"
+                                           FontSize="14"
+                                           TextColor="White"
+                                           Margin="0,5,0,0" />
+                                    <Label Text="{Binding continent}"
+                                           FontSize="14"
+                                           TextColor="White"
+                                           Margin="0,5,0,0" />
+                                    <StackLayout Orientation="Horizontal">
+                                        <Button Text="Edit"
+                                                BackgroundColor="#007ACC"
+                                                TextColor="White"
+                                                Clicked="btnEdit_Clicked"
+                                                CornerRadius="5"
+                                                Margin="0,5,10,0" />
+                                        <Button Text="Delete"
+                                                BackgroundColor="#FF4500"
+                                                TextColor="White"
+                                                Clicked="btnDelete_Clicked"
+                                                CornerRadius="5"
+                                                Margin="0,5,0,0" />
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "BPAIvgEyKr0oBpqzd95xx/v0KjnksTGxnei67lIuUts=",
+  "Source": "MusicBandAPI",
+  "BasePath": "_content/MusicBandAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

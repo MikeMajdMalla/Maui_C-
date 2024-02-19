@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.EditPage">
+
+    <ContentPage.Content>
+        <Grid>
+
+            <Image Source="pic3.jpg" Aspect="AspectFill"  />
+
+            <StackLayout Margin="20" Spacing="15" BackgroundColor="#70B0B0B0" WidthRequest="400">
+            <Label Text="Edit the country and save it" FontSize="20" TextColor="Yellow" HorizontalOptions="Center" />
+
+            <Entry x:Name="editCountryNameEntry" Placeholder="Country Name" />
+            <Entry x:Name="editZipCodeEntry" Placeholder="Zip Code" Keyboard="Numeric" />
+            <Entry x:Name="editContinentEntry" Placeholder="Continent" />
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Save" Clicked="SaveButton_Clicked" BackgroundColor="Green" TextColor="White" />
+                <Button Text="Cancel" Clicked="Cancel_Button_Clicked" BackgroundColor="Red" TextColor="White" />
+            </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+
